@@ -19,3 +19,5 @@ $ protoc --go_out=. --go_opt=paths=source_relative model/book.proto
 ```
 
 This will output a generated go file into `model/book.pb.go`. Every time you re-run the compiler the generated code will be overwritten.
+
+GRPC will use this protocol: encode data into a byte stream using proto files and streaming it across the network, and then decoding it again with the same schema.
