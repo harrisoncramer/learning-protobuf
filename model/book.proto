@@ -1,0 +1,40 @@
+/*
+This is the language implementation for protocol files:
+https://developers.google.com/protocol-buffers/docs/proto3
+*/
+
+syntax = "proto3";
+
+/* This is needed by the protocol buffer compiler to generate names for our go files */
+option go_package = "github.com/harrisoncramer/learning-protobuf/model";
+
+/*
+As you can see, each field in the message definition has a unique number. 
+These field numbers are used to identify your fields in the message binary format, 
+and should not be changed once your message type is in use.
+*/
+
+message Book {
+  int32 Id = 1;
+  string Title = 2;
+  string Author = 3;
+  Category Category = 4;
+}
+
+message Author {
+  int32 Id = 1;
+  string Name = 2;
+}
+
+
+/*
+The "enum" type contains enumerable values and can be used inside
+of another message.
+*/
+
+enum Category {
+  Novel = 0;
+  SciFi = 1;
+  Fantasy = 2;
+  Spiritual = 3;
+}
